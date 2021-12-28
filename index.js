@@ -1,25 +1,27 @@
-console.log( "*********** Calc **********" );
+const colors = require('colors');
+
+console.log( "*********** Calc **********".yellow );
 const calc = require('./calc');
-console.log( calc.add(1,3) );
-console.log( calc.subtraction(1,3) );
-console.log( calc.multiplication(8,3) );
-console.log( calc.division(1,10) );
+console.log( calc.add(1,3).grey );
+console.log( calc.subtraction(1,3).grey );
+console.log( calc.multiplication(8,3).grey );
+console.log( calc.division(1,10).grey );
 
 
-console.log( "\n*********** OS **********" );
+console.log( "\n*********** OS **********".yellow );
 const os = require('os');
-console.log( os.homedir() );
-console.log( os.tmpdir() );
+console.log( os.homedir().blue );
+console.log( os.tmpdir().blue );
 
 
-console.log( "\n*********** FS **********" );
+console.log( "\n*********** FS **********".yellow );
 const fs = require('fs');
 
 fs.writeFile('FileSystem/prueba1.txt','texto de prueba',(err)=>{
     if (err) {
         console.log(err);
     }
-    console.log("Final write file.\n");
+    console.log("Final write file.\n".cyan);
 });
 
 fs.readFile('FileSystem/prueba1.txt',(err,data)=>{
@@ -27,14 +29,14 @@ fs.readFile('FileSystem/prueba1.txt',(err,data)=>{
         console.log(err);
     }
     if (data) {
-        console.log(data);
-        console.log( data.toString() );
+        console.log(data.cyan);
+        console.log( data.toString().cyan );
     }
-    console.log('Fin de read file. \n');
+    console.log('Fin de read file. \n'.cyan);
 });
 
 
-console.log( "\n*********** HTTP **********" );
+console.log( "\n*********** HTTP **********".yellow );
 const http = require('http');
 /*
 http.createServer( (req,res)=>{
@@ -53,7 +55,7 @@ const handleServer = (req,res)=>{
 
 const server = http.createServer( handleServer );
 server.listen(3000,()=>{
-    console.log('Server on port 3000')
+    console.log('Server on port 3000'.green)
 })
 
-console.log( "\n*********** NPM **********" );
+console.log( "\n*********** NPM **********".yellow );
